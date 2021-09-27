@@ -1,0 +1,37 @@
+
+.coin-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+}
+
+table {
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+td {
+    width: 220px;
+    border-top: solid black 2px;
+    
+}
+td:nth-child(1) {  
+   width: 70px;
+  }
+.coin_rank {
+    max-width: 50px;
+    margin-left: 10px;
+}
+
+.coin_name {
+    padding-left: 20px;
+}
+.coin_img {
+    height: 30px;
+    width: 30px;
+    margin-top: 5px;
+}
+.coin_tag_name {
+    padding-left: 50px; 
+}

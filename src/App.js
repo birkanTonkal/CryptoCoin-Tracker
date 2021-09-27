@@ -1,24 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import useFetch from "./components/useFetch";
+import "./App.css";
+import React, { Fragment, useState } from "react";
+import Coins from "./components/Coins";
+
 
 function App() {
+  const { loading, coins, error } = useFetch();
+  const [searchValue, searchValueHandler] = useState('');
+
+  const onChangeHandler = (e) => {
+    searchValueHandler(e.target.value);
+  }
+
+  const filteredCoins = coins.filter((coin) => {
+    return coin.name.toLowerCase().includes(searchValue.toLowerCase());
+  })
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Fragment>
+      <div className="wrapper">
+        <div className="search_bar">
+          <input type="text" onChange={onChangeHandler} />
+        </div>
+        {!loading && <Coins coinsData = {filteredCoins} />}
+      </div>
+    </Fragment>
   );
 }
 
