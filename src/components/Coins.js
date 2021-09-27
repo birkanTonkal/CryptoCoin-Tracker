@@ -6,7 +6,7 @@ function Coins(props) {
   return (
     <div className="coin-container">
       <table>
-        <tbody>
+        <thead>
           <tr>
             <td>Rank</td>
             <td>
@@ -19,7 +19,8 @@ function Coins(props) {
             <td>Market Cap</td>
             <td>Volume</td>
           </tr>
-
+        </thead>
+        <tbody>
           {props.coinsData.map((coin) => {
             return (
               <tr key={coin.id}>
@@ -29,11 +30,17 @@ function Coins(props) {
                   <span className="coin_name">{coin.name}</span>
                 </td>
                 <td>{coin.symbol}</td>
-                <td>${numberToDollar.format(coin.current_price)}</td>
                 <td>
+                  <span >
+                    ${numberToDollar.format(coin.current_price)}
+                  </span>
+                  </td>
+                <td style={coin.price_change_percentage_1h_in_currency < 0 ? {color: "red"} : {color : "green"}}>
                   {coin.price_change_percentage_1h_in_currency.toFixed(2)}%
                 </td>
-                <td>{coin.price_change_percentage_24h.toFixed(2)}%</td>
+                <td style = {coin.price_change_percentage_24h < 0 ? {color: "red"} : {color : "green"}}>
+                  {coin.price_change_percentage_24h.toFixed(2)}%
+                  </td>
                 <td>${numberToDollar.format(coin.market_cap)}</td>
                 <td>${numberToDollar.format(coin.total_volume)}</td>
               </tr>
