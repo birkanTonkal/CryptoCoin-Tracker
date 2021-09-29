@@ -1,0 +1,54 @@
+.coin-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+table {
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+td {
+  width: 220px;
+  border-top: solid black 2px;
+  &:nth-child(1) {
+    width: 70px;
+  }
+}
+.coin_tag {
+  td {
+    border: solid 2px black;
+    cursor: pointer;
+  }
+  &_market_cap_rank,
+  &_symbol,
+  &_name,
+  &_current_price,
+  &_price_change_percentage_1h_in_currency,
+  &_price_change_percentage_24h,
+  &_market_cap,
+  &_total_volume {
+    background-image: url(../icons/down-chevron.png);
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: 15px 15px;
+    &.on {
+      background-image: url(../icons/up-chevron.png);
+    }
+  }
+}
+
+.coin_rank {
+  max-width: 50px;
+  margin-left: 10px;
+}
+.coin_name {
+  padding-left: 20px;
+}
+.coin_img {
+  height: 30px;
+  width: 30px;
+  margin-top: 5px;
+}
+.coin_tag_name {
+  padding-left: 50px;
+}
