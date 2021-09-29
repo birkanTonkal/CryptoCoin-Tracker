@@ -43,14 +43,13 @@ function Coins(props) {
             >
               Rank
             </td>
-            <td className="coin_tag_name">
-              <span
-                onClick={() => {
-                  onClickFunction("name");
-                }}
+            <td className="coin_tag_name"
+              onClick=
+              {() => {
+                onClickFunction("name");
+              }}
               >
-                Name
-              </span>
+              Name
             </td>
             <td
               onClick={(e) => {
@@ -105,13 +104,13 @@ function Coins(props) {
         <tbody>
           {sortedData.map((coin) => {
             return (
-              <tr key={coin.id}>
+              <tr className="all_coins" key={coin.id}>
                 <td>{coin.market_cap_rank}</td>
                 <td>
                   <img className="coin_img" src={coin.image} alt="" />
                   <span className="coin_name">{coin.name}</span>
                 </td>
-                <td>{coin.symbol}</td>
+                <td>{coin.symbol.toUpperCase()}</td>
                 <td>
                   <span>${numberToDollar.format(coin.current_price)}</span>
                 </td>

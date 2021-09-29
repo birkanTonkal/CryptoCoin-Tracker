@@ -1,0 +1,39 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.coin-tags-container {
+  width: 100%;
+}
+.coin-tags {
+  margin: auto;
+  width: 100%;
+  max-width: 80%;
+  display: flex;
+  td {
+    flex-basis: 25%;
+    flex-grow: 0;
+    text-align: center;
+    border-top: 2px solid #264653;
+    border-bottom: 2px solid #264653;
+  }
+}
+.search_bar_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100px;
+  img {
+    width: 24px;
+    height: 24px;
+	transform:translateX(35px);
+  }
+}
+.search_bar {
+  padding-left: 48px;
+  width: 50%;
+  height: 40%;
+  font-size: 20px;
+}

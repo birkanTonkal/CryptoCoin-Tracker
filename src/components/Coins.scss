@@ -7,16 +7,27 @@ table {
   border-collapse: collapse;
   table-layout: fixed;
 }
+tr {
+  background-color: #fff;
+}
 td {
   width: 220px;
-  border-top: solid black 2px;
+  border-top: solid #eff2f5 2px;
   &:nth-child(1) {
     width: 70px;
   }
+  
+}
+.all_coins {
+	&:hover {
+		background-color: #F8FAFD;
+	  }
 }
 .coin_tag {
   td {
-    border: solid 2px black;
+    height: 50px;
+    border-top: solid #eff2f5 2px;
+    border-bottom: solid #eff2f5 2px;
     cursor: pointer;
   }
   &_market_cap_rank,
@@ -29,11 +40,18 @@ td {
   &_total_volume {
     background-image: url(../icons/down-chevron.png);
     background-repeat: no-repeat;
-    background-position: right;
+    background-position: 60% 50%;
     background-size: 15px 15px;
+    user-select: none;
     &.on {
       background-image: url(../icons/up-chevron.png);
     }
+  }
+  &_name {
+    background-position: 70% 50%;
+  }
+  &_market_cap_rank {
+    background-position: 48px 50%;
   }
 }
 

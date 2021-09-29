@@ -1,27 +1,28 @@
 import useFetch from "./components/useFetch";
-import "./App.css";
+import "./App.scss";
 import React, { Fragment, useState } from "react";
 import Coins from "./components/Coins";
-
+import searchIcon from "./icons/search.png"
 
 function App() {
   const { loading, coins, error } = useFetch();
-  const [searchValue, searchValueHandler] = useState('');
+  const [searchValue, searchValueHandler] = useState("");
 
   const onChangeHandler = (e) => {
     searchValueHandler(e.target.value);
-  }
+  };
 
   const filteredCoins = coins.filter((coin) => {
     return coin.name.toLowerCase().includes(searchValue.toLowerCase());
-  })
+  });
   return (
     <Fragment>
+      <div className="search_bar_container">
+        <img src={searchIcon} alt="" />
+        <input className="search_bar" type="text" onChange={onChangeHandler} placeholder="Hi there! Search for coin :)"/>
+      </div>
       <div className="wrapper">
-        <div className="search_bar">
-          <input type="text" onChange={onChangeHandler} />
-        </div>
-        {!loading && <Coins coinsData = {filteredCoins} />}
+        {!loading && <Coins coinsData={filteredCoins} />}
       </div>
     </Fragment>
   );
