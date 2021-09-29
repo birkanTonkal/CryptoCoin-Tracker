@@ -23,6 +23,7 @@ function App() {
       </div>
       <div className="wrapper">
         {!loading && <Coins coinsData={filteredCoins} />}
+        {error && <h1>Error. Try Refreshing.</h1>}
       </div>
     </Fragment>
   );
